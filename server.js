@@ -2,6 +2,7 @@ import express from "express";
 import router from "./routes/hotel.router.js";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+import cors from "cors";
 
 dotenv.config();
 
@@ -17,7 +18,7 @@ const hotelRouter = router;
 
 
 const app = express();
-
+app.use(cors())
 app.use(express.json());
 connectDB();
 
